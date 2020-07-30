@@ -2092,7 +2092,12 @@ textarea.input {
 .logo {
   display: inline-block;
   padding: 10px 0;
-  width: 338px;
+  width: 340px;
+}
+
+.logo.bigtitle {
+  font-size: 54px;
+  white-space: nowrap;
 }
 
 .logo img {
@@ -2225,6 +2230,9 @@ textarea.input {
   font-size: 40px;
   padding: 28px 22px 22px 31px;
   background: #325364;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .advantages {
@@ -2828,9 +2836,6 @@ textarea.input {
 }
 
 .our-projects__column_1 {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 44.02778%;
-          flex: 0 1 44.02778%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2841,9 +2846,6 @@ textarea.input {
 }
 
 .our-projects__column_2 {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 55.97222%;
-          flex: 0 1 55.97222%;
   width: 55.97222%;
   position: relative;
 }
@@ -2874,6 +2876,9 @@ textarea.input {
   font-size: 30px;
   padding: 16px 26px 13px;
   background-color: #325364;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .our-projects__testimonial {
@@ -2974,10 +2979,9 @@ textarea.input {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-}
-
-.slider-our-projects__btn_right {
-  background-color: #b9b8b9;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .instagram {
@@ -3165,10 +3169,27 @@ textarea.input {
   .menu-header__link_border:hover {
     background-color: #325364;
     color: #fff;
+    border: 3px solid #325364;
   }
 }
 
 @media (min-width: 992px) {
+  .banner-box-info__btn:hover {
+    background: #477186;
+  }
+
+  .our-projects__btn:hover {
+    background-color: #477186;
+  }
+
+  .slider-our-projects .slick-arrow:hover {
+    background-color: #b9b8b9;
+  }
+
+  .slider-our-projects__btn:hover {
+    background-color: #b9b8b9;
+  }
+
   .footer-menu__link:hover {
     color: #325364;
   }
@@ -3195,6 +3216,10 @@ textarea.input {
 }
 
 @media (max-width: 1205px) {
+  .logo.bigtitle {
+    font-size: 45px;
+  }
+
   .logo {
     width: 290px;
   }
@@ -3552,10 +3577,6 @@ textarea.input {
     z-index: 2;
   }
 
-  .slider-our-projects .slick-next {
-    background-color: #b9b8b9;
-  }
-
   .slider-our-projects__btn {
     display: none;
   }
@@ -3843,6 +3864,10 @@ textarea.input {
 
   .header {
     min-height: 70px;
+  }
+
+  .logo.bigtitle {
+    font-size: 34px;
   }
 
   .logo {

@@ -102,7 +102,20 @@
 .logo {
 	display: inline-block;
 	padding: 10px 0;
-	width: 338px;
+	width: 340px;
+
+	&.bigtitle {
+		font-size: 54px;
+		white-space: nowrap;
+
+		@media (max-width: 1205px ) {
+			font-size: 45px;
+		}
+
+		@media (max-width: $md4+px ) {
+			font-size: 34px;
+		}
+	}
 
 	@media (max-width: 1205px ) {
 		width: 290px;
@@ -197,6 +210,7 @@
 				&:hover {
 					background-color: $linkColor;
 					color: #fff;
+					border: 3px solid $linkColor;
 				}	
 			}
 		}
@@ -298,11 +312,18 @@
 		font-size: 40px;
 		padding: 28px 22px 22px 31px;
 		background: $linkColor;
+		transition: all .2s ease;
 
 		@media (max-width: $md3+px ) {
 			font-size: 30px;
 		    bottom: -18px;
 		    padding: 20px 15px 14px 22px;
+		}
+
+		@media (min-width: 992px ) {
+			&:hover {
+				background: $btnHoverColor;
+			}
 		}
 	}
 }
@@ -1186,7 +1207,7 @@
 	}
 	&__column {
 		&_1 {
-			flex: 0 1 634 / 1440 * 100%;
+		//	flex: 0 1 634 / 1440 * 100%;
 			display: flex;
 			justify-content: flex-end;
 			width: 634 / 1440 * 100%;
@@ -1199,7 +1220,7 @@
 			}
 		}
 		&_2 {
-			flex: 0 1 806 / 1440 * 100%;
+			//flex: 0 1 806 / 1440 * 100%;
 			width: 806 / 1440 * 100%;
 			position: relative;
 			@media (max-width: $md2+px ) {
@@ -1245,9 +1266,16 @@
 		font-size: 30px;
 		padding: 16px 26px 13px;
 		background-color: $linkColor;
+		transition: all .2s ease;
 
 		@media (max-width: $md4+px ) {
 			font-size: 18px;
+		}
+
+		@media (min-width: 992px ) {
+			&:hover {
+				background-color: $btnHoverColor;
+			}
 		}
 	}
 	&__slider {}
@@ -1389,6 +1417,12 @@
 			}
 		}
 
+		@media (min-width: 992px ) {
+			&:hover {
+				background-color: #b9b8b9;
+			}
+		}
+
 	}
 	& .slick-prev {
 
@@ -1399,7 +1433,7 @@
 	}
 	& .slick-next {
 		@media (max-width: $md2+px ) {
-			background-color: #b9b8b9;
+			
 		}
 
 	}
@@ -1420,14 +1454,21 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
+		transition: all .2s ease;
 
 		&_right {
-			background-color: #b9b8b9;
+			
 		}
 		&_left {}
 
 		@media (max-width: $md2+px ) {
 			display: none;
+		}
+
+		@media (min-width: 992px ) {
+			&:hover {
+				background-color: #b9b8b9;
+			}
 		}
 	}	
 }

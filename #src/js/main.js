@@ -1,5 +1,5 @@
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
-
+//if (isMobile.any()) {}
 @@include('forms.js');
 
 $(document).ready(function() {
@@ -29,7 +29,6 @@ $(document).ready(function() {
 
 // === stars handler ================================================================================
 	let rating = document.querySelectorAll('.stars');
-
 	if(rating.length) {
 		for(let listStars of rating) {
 			for(let star = 0; star < listStars.dataset.amountstars; star++) {
@@ -41,18 +40,20 @@ $(document).ready(function() {
 
 // === services-preiew handler ===================================================================
 let servicesPreiew = document.querySelector('.services-preiew');
-let servicesItems = servicesPreiew.querySelectorAll('.item-services__inner');
+if(servicesPreiew) {
+	let servicesItems = servicesPreiew.querySelectorAll('.item-services__inner');
 
-if (isMobile.any()) {
-	for(let servicesItem of servicesItems) {
-		servicesItem.classList.add('mobile');
+	if (isMobile.any()) {
+		for(let servicesItem of servicesItems) {
+			servicesItem.classList.add('mobile');
+		} 
+		servicesPreiew.addEventListener('click', function(e) {
+			if(e.target.closest('.item-services__inner')) {
+				e.target.closest('.item-services__inner').classList.toggle('open');
+			}
+		})
 	} 
-	servicesPreiew.addEventListener('click', function(e) {
-		if(e.target.closest('.item-services__inner')) {
-			e.target.closest('.item-services__inner').classList.toggle('open');
-		}
-	})
-} 
+}
 // === // services-preiew handler ===================================================================
 
 
@@ -70,40 +71,105 @@ if (isMobile.any()) {
 
 
 let dotsOurProjects = document.querySelector('.dots-our-projects');
-let projectSlider = document.querySelector('.slider-our-projects');
-let sliderDots = projectSlider.querySelector('.slick-dots');
-let sliderPrev = projectSlider.querySelector('.slick-prev');
-let sliderNext = projectSlider.querySelector('.slick-next');
-let prevBtn = document.querySelector('.slider-our-projects__btn_left');
-let nextBtn = document.querySelector('.slider-our-projects__btn_right');
 
-dotsOurProjects.addEventListener('click', function(e) {
-	if(e.target.closest('.dots-our-projects__item')) {
-		let dotsItem = e.target.closest('.dots-our-projects__item');
-		let dotsNum = dotsItem.dataset.dots;
-		let dotsSlide = sliderDots.children[dotsNum].firstElementChild;
-		let event = new Event("click",{bubbles: true, cancelable: false});
-		dotsSlide.dispatchEvent(event);
-		dotsItem.classList.add('active');
+if(dotsOurProjects) {
+	let projectSlider = document.querySelector('.slider-our-projects');
+		let sliderDots = projectSlider.querySelector('.slick-dots');
+		let sliderPrev = projectSlider.querySelector('.slick-prev');
+		let sliderNext = projectSlider.querySelector('.slick-next');
+	let prevBtn = document.querySelector('.slider-our-projects__btn_left');
+	let nextBtn = document.querySelector('.slider-our-projects__btn_right');
 
-		for(let item of dotsOurProjects.children) {
-			if(item === dotsItem) {
-				continue;
+	dotsOurProjects.addEventListener('click', function(e) {
+		if(e.target.closest('.dots-our-projects__item')) {
+			let dotsItem = e.target.closest('.dots-our-projects__item');
+			let dotsNum = dotsItem.dataset.dots;
+			let dotsSlide = sliderDots.children[dotsNum].firstElementChild;
+			let event = new Event("click",{bubbles: true, cancelable: false});
+			dotsSlide.dispatchEvent(event);
+			dotsItem.classList.add('active');
+
+			for(let item of dotsOurProjects.children) {
+				if(item === dotsItem) {
+					continue;
+				}
+
+				item.classList.remove('active');
 			}
 
-			item.classList.remove('active');
 		}
-
+	})
+	prevBtn.onclick = function() {
+		let event = new Event("click",{bubbles: true, cancelable: false});
+		sliderPrev.dispatchEvent(event);
 	}
-})
-prevBtn.onclick = function() {
-	let event = new Event("click",{bubbles: true, cancelable: false});
-	sliderPrev.dispatchEvent(event);
-}
-nextBtn.onclick = function() {
-	let event = new Event("click",{bubbles: true, cancelable: false});
-	sliderNext.dispatchEvent(event);
+	nextBtn.onclick = function() {
+		let event = new Event("click",{bubbles: true, cancelable: false});
+		sliderNext.dispatchEvent(event);
+	}
 }
 
 // ==== // slider-our-projects =======================================================
+
+
+// ==== cards-advantages hover =======================================================
+if (isMobile.any()) {
+	let cardsAdvantages = document.querySelectorAll('.cards-advantages');
+	if(cardsAdvantages) {
+		for(let card of cardsAdvantages) {
+			let hoverBox = card.querySelector('.cards-advantages__hever-box');
+			let height = hoverBox.offsetHeight
+			hoverBox.style.transform = 'translateY(' + (height - 118) + 'px)';
+			hoverBox.setAttribute('data-position', 'down');
+		}
+		
+		$('.cards-advantages').click(function(e) {
+			let hoverBox = this.querySelector('.cards-advantages__hever-box');
+			let height = hoverBox.offsetHeight;
+
+			if(hoverBox.dataset.position == 'down') {
+				hoverBox.style.transform = 'translateY(0px)';
+				hoverBox.dataset.position = 'top';
+			} else {
+				hoverBox.style.transform = 'translateY(' + (height - 118) + 'px)';
+				hoverBox.dataset.position = 'down';
+			}
+		});
+	}
+} else {
+	let cardsAdvantages = document.querySelectorAll('.cards-advantages');
+	if(cardsAdvantages) {
+		for(let card of cardsAdvantages) {
+			let hoverBox = card.querySelector('.cards-advantages__hever-box');
+			let height = hoverBox.offsetHeight
+			hoverBox.style.transform = 'translateY(' + (height - 118) + 'px)';
+		}
+
+		$('.cards-advantages').hover(function(e){
+			let hoverBox = this.querySelector('.cards-advantages__hever-box');
+			hoverBox.style.transform = 'translateY(0px)';
+			}, function(){
+			let hoverBox = this.querySelector('.cards-advantages__hever-box');
+			let height = hoverBox.offsetHeight
+			hoverBox.style.transform = 'translateY(' + (height - 118) + 'px)';
+		})
+	}
+}
+
+
+// ==== // cards-advantages hover =======================================================
+
+
+// ==== tabs-material =======================================================
+let tabsMaterial = document.querySelector('.tabs-material');
+
+if(tabsMaterial) {
+	tabsMaterial.onclick = function(e) {
+		e.preventDefault();
+	}
+}
+
+// ==== // tabs-material =======================================================
+
+
 });

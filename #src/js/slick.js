@@ -2982,10 +2982,6 @@
     };
 
     Slick.prototype.updateDots = function() {
-        let dotsOurProjects = document.querySelector('.dots-our-projects');
-        let projectSlider = document.querySelector('.slider-our-projects');
-        let sliderDots = projectSlider.querySelector('.slick-dots');
-
         var _ = this;
 
         if (_.$dots !== null) {
@@ -3000,22 +2996,28 @@
                 .eq(Math.floor(_.currentSlide / _.options.slidesToScroll))
                 .addClass('slick-active');
 
-            for(let i = 0; i <= sliderDots.children.length - 1; i++) {
+            let dotsOurProjects = document.querySelector('.dots-our-projects');
+            if(dotsOurProjects) {
+                let projectSlider = document.querySelector('.slider-our-projects');
+                let sliderDots = projectSlider.querySelector('.slick-dots');    
 
-                if(sliderDots.children[i].classList.contains("slick-active")) {
-                    let dotsProjects = dotsOurProjects.children[i];
+                for(let i = 0; i <= sliderDots.children.length - 1; i++) {
 
-                    dotsProjects.classList.add('active');
+                    if(sliderDots.children[i].classList.contains("slick-active")) {
+                        let dotsProjects = dotsOurProjects.children[i];
 
-                    for(let item of dotsOurProjects.children) {
-                        if(item == dotsProjects) {
-                            continue;
+                        dotsProjects.classList.add('active');
+
+                        for(let item of dotsOurProjects.children) {
+                            if(item == dotsProjects) {
+                                continue;
+                            }
+
+                            item.classList.remove('active');
                         }
-
-                        item.classList.remove('active');
                     }
-                }
-            }    
+                }  
+            }  
 
         }
 

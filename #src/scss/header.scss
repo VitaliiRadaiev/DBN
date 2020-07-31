@@ -1,0 +1,197 @@
+// ==== HEADER =====================================================
+.header {
+	min-height: 111px;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 20px 0;
+	box-shadow: 0px 0px 5px -3px #000;
+
+	@media (max-width: $md4+px ) {
+		min-height: 70px;
+	}
+
+	&__body {
+		flex: 0 1 100%;
+		max-width: 1257px;
+		padding: 0 15px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__logo {
+		flex: 0 0 auto;
+
+		@media (max-width: 1140px ) {
+			flex: 0 1 100%;
+			text-align: center;
+		}
+
+		@media (max-width: $md2+px ) {
+			flex: 0 0 auto;
+			margin-top: 0;
+		}
+	}
+	&__menu {
+		flex: 1 1 auto;
+	}
+	&__burger {
+		flex: 1 1 auto;
+		display: none;
+		text-align: right;
+
+		& .burger-wrap {
+			background-color: transparent;
+		}
+
+		& .burger {
+
+			& > span {
+				background: #000;
+				width: 30px !important;
+				
+				//transform: translateX(-50%) !important;
+
+				&:nth-child(1) {
+					top:10px;
+					right: 6px;
+				}
+
+				&:nth-child(4) {
+					bottom:10px;
+					width: 22px;
+					left: 6px;
+				}
+			}
+		}
+
+		@media (max-width: $md2+px ) {
+			display: block;
+		}
+	}
+}
+.logo {
+	display: inline-block;
+	padding: 10px 0;
+	width: 340px;
+
+	&.bigtitle {
+		font-size: 54px;
+		white-space: nowrap;
+
+		@media (max-width: 1205px ) {
+			font-size: 45px;
+		}
+
+		@media (max-width: $md4+px ) {
+			font-size: 34px;
+		}
+	}
+
+	@media (max-width: 1205px ) {
+		width: 290px;
+	}
+
+	@media (max-width: $md4+px ) {
+		width: 217px;
+	}
+
+	& img {
+		width: 100%;
+	}
+}
+.menu-header {
+	@media (max-width: $md2+px ) {
+		position: absolute;
+		width: 77%;
+		min-height: 100vh;
+		background: rgba(0,0,0,0.7);
+		z-index: 5;
+		top: 0;
+		left: -100%;
+		transition: all .6s ease;
+		overflow: auto;
+
+		&.open {
+			left: 0;
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		@media (max-width: 1140px ) {
+			justify-content: center;
+		}
+
+		@media (max-width: $md2+px ) {
+			display: block;
+			margin-top: 80px;
+		}
+	}
+	&__item {
+		position: relative;
+		&:not(:first-child) {
+			padding-left: 1px;
+		}
+
+		&:not(:first-child):not(:last-child):before {
+			position: absolute;
+			content: '';
+			height: 6px;
+			width: 1px;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background: $titleColor;
+
+			@media (max-width: $md2+px ) {
+				display: none;
+			}
+		}
+	}
+	&__link {
+		color: $titleColor;
+		font-size: 20px;
+		font-weight: 400;
+		display: inline-block;
+		padding: 16px 23px;
+		transition: color .2s ease;
+
+		@media (max-width: $md2+px ) {
+			color: #fff;
+		}
+
+		@media (min-width: $md2+px ) {
+			&:hover {
+				color: $linkColor;
+			}	
+		}
+
+		&_border {
+			border: none;
+			transition: all .2s ease;
+			padding: 16px 23px;
+
+			@media (min-width: $md2+px ) {
+				border: 3px solid #000001;
+				padding: 14px 19px;
+				&:hover {
+					background-color: $linkColor;
+					color: #fff;
+					border: 3px solid $linkColor;
+				}	
+			}
+		}
+
+		&.active {
+			color: $linkColor;
+		}
+	}
+}
+
+// ==== AND HEADER =====================================================

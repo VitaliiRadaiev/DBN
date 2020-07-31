@@ -1,0 +1,339 @@
+// ======= HOW-WE-WORK ==================================================
+.how-we-work {
+	padding-bottom: 76px;
+
+	@media (max-width: $md3+px ) {
+		padding-bottom: 50px;
+	}
+	&__body {
+		display: flex;
+		padding: 0 15px 0 0;
+
+		@media (max-width: $md2+px ) {
+			flex-direction: column;
+			padding: 0;
+		}
+
+	}
+	&__column {
+		&_1 {
+			width: 718 / 1440 * 100%;
+			min-height: 616px;
+
+			@media (max-width: $md2+px ) {
+				order: 1;
+				position: relative;
+				min-height: 0;
+				padding-bottom: 70%;
+			}
+		}
+		&_2 {
+			width: 722 / 1440 * 100%;
+		}
+
+		@media (max-width: $md2+px ) {
+			width: 100%;
+		}
+	}
+	&__photo-block {}
+	&__text-block {
+		padding:50px 0 50px 75px;
+
+		@media (max-width: 1200px ) {
+			padding:50px 0 50px 30px;
+		}
+
+		@media (max-width: $md2+px ) {
+			padding: 50px 15px;
+		}
+
+		@media (max-width: $md3+px ) {
+			text-align: center;
+		}
+	}
+	&__title {
+		margin-top: 25px;
+		margin-bottom: 43px;
+
+		@media (max-width: $md4+px ) {
+			margin-bottom: 15px;
+			margin-top: 0;
+		}
+	}
+	&__text {
+		max-width: 488px;
+
+		@media (max-width: $md2+px ) {
+			max-width: none;
+		}
+	}
+}
+.photo-block-howWeWork {
+	height: 100%;
+	width: 100%;
+	display: flex;
+
+	@media (max-width: $md2+px ) {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__column {
+		&_1 {
+			width: 341 / 713 * 100%;
+			padding-right: 23px;
+
+			@media (max-width: $md4+px ) {
+				padding-right: 10px;
+			}
+		}
+		&_2 {
+			width: 372 / 713 * 100%;
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		&_1 {
+			background: red;
+		}
+		&_2 {
+			background: gray;
+		}
+		&_3 {
+			background: purple;
+		}
+	}
+	&__row {
+		&_1 {
+			height: 361 / 616 * 100%;
+		}
+		&_2 {
+			height: 255 / 616 * 100%;
+			padding-top: 19px;
+			@media (max-width: $md4+px ) {
+				padding-top: 10px;
+			}
+		}
+	}
+}
+// ======= AND HOW-WE-WORK ==================================================
+
+
+// ======= PROCESS-MODIFICATION-PROCESSPAGE ==================================================
+.process-modification-processPage {
+	&.process {
+		padding-bottom: 20px;
+	}
+}
+// ======= AND PROCESS-MODIFICATION-PROCESSPAGE ==================================================
+
+
+
+
+// ======= DESIGN ==================================================
+.design {
+
+	&.block-info-left-text {
+		padding-top: 43px;
+
+		@media (max-width: $md2+px ) {
+			padding-bottom: 0;
+		}
+
+		@media (max-width: 575px ) {
+			padding-top: 20px;
+		}
+	}
+
+	& .block-info-left-text__column_1 {
+		width: 50%;
+
+		
+		@media (max-width: $md2+px ) {
+			width: 100%;
+		}
+
+		@media (max-width: $md3+px ) {
+			padding-right: 15px;
+		}		
+	}
+
+	& .block-info-left-text__column_2 {
+		width: 50%;
+		
+		@media (max-width: $md2+px ) {
+			width: 100%;
+		}
+	}
+		
+		
+	&__accordion {}
+
+	& .block-info-left-text__wrap{
+		min-height: 700px;
+		display: flex;
+		flex-direction: column;
+		max-width: 604px;	
+		padding: 6px 119px 88px 15px;
+
+		@media (max-width: 1200px ) {
+			padding-right: 50px;
+		}
+
+		@media (max-width: $md2+px ) {
+			max-width: none;
+			padding: 6px 0px 88px 0px;
+		}
+	}
+
+	& .block-info-left-text__title {
+		margin-bottom: 4px;
+	}
+
+	& .block-info-left-text__text {
+		flex: 1 1 auto;
+
+		& > p {
+			margin: 10px 0;
+		}
+	}
+}
+// ======= AND DESIGN ==================================================
+
+
+// ======= ACCORDION ==================================================
+.accordion {
+	@media (max-width: $md3+px ) {
+		text-align: left;
+	}
+	&__item {
+		border-bottom: 1px solid #ebebeb;
+	}
+	&__title {
+		cursor: pointer;
+		min-height: 73px;
+		padding: 15px 0px 15px 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		&.active {
+			color: #8a888a;
+
+			& .plus__body {
+				&:before {
+					height: 0;
+				}
+				&:after {
+					background: #8a888a;
+				}
+			}
+		}
+	}
+	&__plus {
+		height: 100%;
+		width: 30px;
+		margin-left: 15px;
+	}
+	&__collapse {
+		display: none;
+		color: #8a888a;
+		margin-bottom: 35px;
+		padding-right: 35px;
+		margin-top: -14px;
+
+		@media (max-width: $md2+px ) {
+			padding-right: 50px;
+		}
+	}
+}
+
+.plus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__body {
+		height: 25px;
+		width: 25px;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: '';
+			background: #000;
+			height: 100%;
+			width: 1px;
+			left: 50%;
+			transform: translateX(-50%);
+			transition: all .2s ease;
+		}
+		&:after {
+			position: absolute;
+			content: '';
+			background: #000;
+			width: 100%;
+			height: 1px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+// ======= AND ACCORDION ==================================================
+
+
+// ======= PURCHASE ==================================================
+.purchase {
+	&__accordion {
+		max-width: 604px;
+
+		@media (max-width: $md2+px ) {
+			max-width: none;
+		}
+	}
+
+	&.block-info-right-text {
+		padding:52px 0 0 0;
+
+		@media (max-width: $md2+px ) {
+			padding: 0;
+		}
+	}
+
+	& .block-info-right-text__column_1 {
+		min-height: auto;
+	} 
+
+	& .block-info-right-text__column_2 {
+		background-color: #f2f2f2;
+		padding: 0;
+	}
+
+	& .block-info-right-text__wrap{
+		min-height: 694px;
+		max-width: 601px;
+		display: flex;
+		flex-direction: column;	
+		padding: 51px 15px 35px 114px;
+
+		@media (max-width: 1200px ) {
+			padding-left: 50px;
+		}
+
+		@media (max-width: $md2+px ) {
+			max-width: none;
+			padding: 50px 15px;
+		}
+	}
+
+	& .block-info-right-text__title {
+		margin-bottom: 4px;
+	}
+
+	& .block-info-right-text__text {
+		flex: 1 1 auto;
+		& > p {
+			margin: 10px 0;
+		}
+	}
+}
+// ======= AND PURCHASE ==================================================

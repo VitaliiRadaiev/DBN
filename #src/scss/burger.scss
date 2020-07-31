@@ -36,19 +36,19 @@
 		left: 10px;
 	}
 
-	.second {
-		transform: rotate(45deg);
+	& .burger span.second {
+		transform: rotate(45deg) !important;
 	}
 
-	.third {
-		transform: rotate(-45deg);
+	& .burger span.third {
+		transform: rotate(-45deg) !important;
 	}
 
-	.first {
+	& .burger span.first {
 		transform:  scale(0) !important;
 	}
 
-	.fourth {
+	& .burger span.fourth {
 			transform: scale(0) !important;
 	}
 }

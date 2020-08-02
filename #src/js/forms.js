@@ -1,3 +1,4 @@
+@@include('jquery.inputmask.bundle.min.js');
 //FORMS
 function forms(){
 	//SELECT
@@ -226,6 +227,7 @@ function forms(){
 				$(this).parent().addClass('focus');
 			if($(this).attr('data-type')=='pass'){
 				$(this).attr('type','password');
+		
 			};
 			$(this).val('');
 		};
@@ -246,6 +248,7 @@ function forms(){
 				$(this).parent().append('<div class="form__label">'+$(this).attr('data-value')+'</div>');
 			}
 		}
+
 
 		$(this).click(function() {
 			if (this.value == $(this).attr('data-value')) {
@@ -292,7 +295,7 @@ function forms(){
 	$.each($('input.phone'), function(index, val) {
 		$(this).attr('type','tel');
 		$(this).focus(function(){
-			$(this).inputmask('+7(999) 999 9999',{clearIncomplete: true,clearMaskOnLostFocus: true,
+			$(this).inputmask('(999) 999-9999',{clearIncomplete: true,clearMaskOnLostFocus: true,
 				"onincomplete": function(){maskclear($(this));}
 			});
 			$(this).addClass('focus');

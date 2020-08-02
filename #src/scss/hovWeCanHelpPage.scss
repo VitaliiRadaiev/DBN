@@ -55,8 +55,8 @@
 		align-items: flex-end;
 		margin-bottom: 19px;
 
-		& img {
-			object-fit: contain;
+		& > svg {
+			height: 100%;
 		}
 	}
 	&__text {
@@ -384,7 +384,7 @@
 		line-height: calc(30 / 20);
 		text-transform: uppercase;
 
-		& > span {
+		& > div {
 			&:first-child {
 				margin-right: 20px;
 			}

@@ -3,8 +3,6 @@
 		$('.burger').click(function(e) {
 			let _ = this;
 
-			console.log(_.querySelector('span:nth-child(1)'))
-
 			let classNameElem = this.dataset.activel;
 			let menu = document.querySelector(`.${classNameElem}`);
 			
@@ -63,7 +61,7 @@
 			});
 
 			document.body.addEventListener('click', (e) => {
-				if(!e.target.closest('.burger-wrap') && !e.target.closest('.menu-header')) {
+				if(e.target.closest('.menu-header') && !e.target.closest('.menu-header__list')) {
 					closeMenu();
 				}
 			})

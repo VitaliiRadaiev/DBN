@@ -1,20 +1,22 @@
 // ======= GALLERY-DETAILS ==================================================
-.galleryDetails {
+.galleryDetails-m {
 	margin-bottom: -2px;
 	&__body {
 		display: flex;
 
-		@media (max-width: 1100px ) {
-			flex-direction: column;
+		@media (max-width: 1024px ) {
+			flex-direction: column; 
 		}
 	}
 	&__column {
 		&_1 {
 			width: 509 / 1440 * 100%;
 			display: flex;
-			justify-content: flex-end;
+			flex-direction: column; 
+			transition: all .4s ease; 
+			align-items: flex-end;
 
-			@media (max-width: 1100px ) {
+			@media (max-width: 1024px ) {
 				order: 1;
 			}
 		}
@@ -22,19 +24,21 @@
 			width: 931 / 1440 * 100%;
 		}
 
-		@media (max-width: 1100px ) {
+		@media (max-width: 1024px ) {
 			width: 100%;
 		}
 	}
 	&__info-box {
 		padding: 106px 65px 30px 15px;
 		max-width: 463px;
+		display: inline-block;
+		//transition: all .1s ease;
 
 		@media (max-width: 1200px ) {
 			padding: 106px 15px 30px 15px;
 		}
 
-		@media (max-width: 1100px ) {
+		@media (max-width: 1024px ) {
 			padding: 106px 15px 30px 15px;
 			max-width: none;
 			width: 100%;
@@ -79,7 +83,7 @@
 				}
 
 				&:hover {
-					& .galleryDetails__arrows {
+					& .galleryDetails-m__arrows {
 						fill: #e2d5c5;
 					}
 				}
@@ -106,6 +110,8 @@
 	&__item {
 		//min-height: 832px;
 		height: 100%;
+		padding-bottom: 2px;
+		transition: all .4s ease;
 		& > a {
 			display: block;
 			height: 100%;
@@ -135,8 +141,55 @@
 			}
 		}
 	}
+
+	&__arrow {
+		position: fixed;
+		z-index: 2;
+		right: 0;
+		bottom: 0;
+		width: 62px;
+		height: 84px;
+		background-color: $linkColor;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		@media (min-width: 992px ) {
+			&:hover {
+				transition: all .2s ease;
+				background-color: #faf6f0;
+
+			}
+
+			&:hover {
+				& .galleryDetails-m__arrows {
+					transition: all .2s ease;
+					fill: #e2d5c5;
+				}
+			}
+		}
+
+		& svg {
+			height: 100%;
+		}
+	}
+
+	&__prev {
+		& span {
+			transform: rotate(90deg);
+		}
+	}
+	&__next {
+		right: 62px;
+
+		& span {
+			transform: rotate(90deg);
+		}
+	}
 }
-.info-galleryDetails {
+.info-galleryDetails-m {
+
 
 	&__list {
 		margin-bottom: 70px;
@@ -183,7 +236,7 @@
 	}
 }
 
-.social-galleryDetails {
+.social-galleryDetails-m {
 	&__label {
 		margin-bottom: 7px;
 		color: #b9b8b9;

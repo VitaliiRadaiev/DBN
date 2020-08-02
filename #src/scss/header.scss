@@ -41,6 +41,8 @@
 		flex: 1 1 auto;
 		display: none;
 		text-align: right;
+		position: relative;
+		z-index: 20;
 
 		& .burger-wrap {
 			background-color: transparent;
@@ -51,8 +53,6 @@
 			& > span {
 				background: #000;
 				width: 30px !important;
-				
-				//transform: translateX(-50%) !important;
 
 				&:nth-child(1) {
 					top:10px;
@@ -105,9 +105,8 @@
 .menu-header {
 	@media (max-width: $md2+px ) {
 		position: absolute;
-		width: 77%;
+		width: 100%;
 		min-height: 100vh;
-		background: rgba(0,0,0,0.7);
 		z-index: 5;
 		top: 0;
 		left: -100%;
@@ -130,7 +129,13 @@
 
 		@media (max-width: $md2+px ) {
 			display: block;
-			margin-top: 80px;
+			padding: 80px 0 80px;
+			width: 77%;
+			height: 100%;
+			background: rgba(0,0,0,0.7);
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 	&__item {
@@ -190,6 +195,10 @@
 
 		&.active {
 			color: $linkColor;
+
+			@media (max-width: $md2+px ) {
+				color: gold;
+			}	
 		}
 	}
 }

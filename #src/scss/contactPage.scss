@@ -1,0 +1,142 @@
+// ======= CONTACT ==================================================
+.contact {
+	min-height: 1075px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 676px;
+	}
+	&__body {
+		flex: 1 1 auto;
+		position: relative;
+		z-index: 2;
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	&__form {
+		margin-bottom: 88px;
+		width: 100%;
+	}
+}
+
+
+.textarea {
+}
+.form {
+	width: 100%;
+	max-width: 509px;
+	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+	opacity: 0.98;
+	padding: 57px 62px 0;
+	margin: 0 auto;
+
+	@media (max-width: $md4+px ) {
+		padding: 30px 15px 0;
+	}
+
+	&__title {
+		margin-bottom: 22px;
+	}
+	&__item {
+		min-height: 60px;
+		border-bottom: 1px solid #ebebeb;
+		margin-bottom: 16px;
+
+
+		&.err {
+			border-bottom: 1px solid red;
+		}
+
+		& label[for="message"] {
+			margin-top: 34px;
+			margin-bottom: 9px;
+		}
+
+		& > label {
+			color: #b9b8b9;
+			font-family: $mainFontFamily;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: calc(17 / 16);
+			text-transform: uppercase;
+			display: block;
+		}
+
+		&_message {
+			margin-bottom: 19px;
+		}
+	}
+	&__btn-wrap {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 -62px;
+		transform: translateY(45px);
+
+		@media (max-width: $md4+px ) {
+			margin: 0 -15px;
+		}
+	}
+	&__btn {
+		display: inline-flex;
+		padding: 15px 30px;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		color: #fff;
+		background: $linkColor;
+		font-family: $titleFontFamily;
+		font-size: 40px;
+		font-weight: 400;
+		min-width: 302px;
+		min-height: 88px;
+		transition: all .2s ease;
+
+		@media (min-width: 992px ) {
+			&:hover {
+				background: $btnHoverColor;
+			}	
+		}
+
+		@media (max-width: $md4+px ) {
+			width: 100%;
+			min-width: auto;
+
+		}
+	}
+
+	&__input {
+		padding: 5px 0;
+		color: $textColor;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: calc(18 / 20);
+
+		&_name {}
+		&_email {}
+		&_phone {}
+		&_question {}
+		&_textarea {
+			width: 100%;
+			height: 116px;
+			resize: none;
+			color: $textColor;
+			font-size: 14px;
+			font-weight: 300;
+			line-height: calc(20 / 14);
+
+			@media (max-width: $md4+px ) {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// ======= AND CONTACT ==================================================

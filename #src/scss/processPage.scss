@@ -1,3 +1,11 @@
+.padding-150 {
+	padding-bottom: 105px;
+
+	@media (max-width: $md3+px ) {
+		padding-bottom: 30px;
+	}	
+}
+
 // ======= HOW-WE-WORK ==================================================
 .how-we-work {
 	padding-bottom: 76px;
@@ -132,7 +140,7 @@
 
 
 // ======= DESIGN ==================================================
-.design {
+.process-block-text-left {
 
 	&.block-info-left-text {
 		padding-top: 43px;
@@ -282,7 +290,7 @@
 
 
 // ======= PURCHASE ==================================================
-.purchase {
+.process-block-text-right {
 	&__accordion {
 		max-width: 604px;
 

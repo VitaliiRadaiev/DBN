@@ -15,7 +15,44 @@
 		<div class="wrapper">
 			@@include('_header.html')
 			<main class="page">
-				
+				<section class="contact">
+					<div class="contact__bg ibg">
+						<img src="img/main-banner/banner.jpg" alt="banner">
+					</div>
+					<div class="contact__body container">
+						<div class="contact__form">
+							<form action="contact.html" class="form">
+								<div class="form__title bigtitle">
+									contact
+								</div>
+								<div class="form__item">
+									<label for="name">name</label>
+									<input autocomplete="off" id="name" type="text" name="form[]" data-value="Jessica Helderman" class="form__input form__input_name input req">	
+								</div>
+								<div class="form__item">
+									<label for="name">email</label>
+									<input autocomplete="off" id="email" type="text" name="form[]" data-value="mailme@domain.com" class="form__input form__input_email input email req">	
+								</div>	
+								<div class="form__item">
+									<label for="phone">PHONE NUMBER</label>
+									<input autocomplete="off" id="phone" type="text" name="form[]" data-value="(801) 505-9984" class="form__input form__input_phone input phone req">
+								</div>
+								<div class="form__item">
+									<label for="caseType">CASE TYPE</label>
+									<input autocomplete="off" id="caseType" type="text" name="form[]" data-value="General question" class="form__input form__input_question input req">	
+								</div>
+								<div class="form__item form__item_message">
+									<label for="message">MESSAGE</label>
+									<textarea name="form[]" id="message" data-value="Enter your message" class="form__input form__input_textarea textarea"></textarea>
+								</div>
+
+								<div class="form__btn-wrap">
+									<button class="form__btn" type="submit"><span>send</span></button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
 			</main>
 			@@include('_footer.html')
 		</div>

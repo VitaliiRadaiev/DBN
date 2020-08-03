@@ -1123,6 +1123,7 @@ if (!isMobile.any()) {
 			let galleryDetailsM__prev = document.querySelector('.galleryDetails-m__prev');
 			let galleryDetailsM__next = document.querySelector('.galleryDetails-m__next');
 			let galleryBox = document.querySelector('.galleryDetails-m__gellery-box');
+			let mask = document.querySelector('.galleryDetails-m__mask');
 
 			if(galleryBox.children.length <= 1) {
 				galleryDetailsM__prev.style.display = 'none';
@@ -1135,13 +1136,37 @@ if (!isMobile.any()) {
 			let infoGalleryDetailsM_metrics = infoGalleryDetailsM.getBoundingClientRect();
 			
 
-			if(header.getBoundingClientRect().top < -header.getBoundingClientRect().height && footerPosition >= -100) {
-				infoGalleryDetailsM.style.transform = 'translateY(' +  ((window.pageYOffset - header.getBoundingClientRect().height - 90) < 0 ? 0 : window.pageYOffset - header.getBoundingClientRect().height - 90) +'px)';
+			// if(header.getBoundingClientRect().top < -header.getBoundingClientRect().height && footerPosition >= -100) {
+			// 	//infoGalleryDetailsM.style.transform = 'translateY(' +  ((window.pageYOffset - header.getBoundingClientRect().height - 90) < 0 ? 0 : window.pageYOffset - header.getBoundingClientRect().height - 90) +'px)';
+			// 	infoGalleryDetailsM.style.position = 'fixed';
+			// 	infoGalleryDetailsM.style.left =  infoGalleryDetailsM_metrics.left + 'px';
+			// 	infoGalleryDetailsM.style.top =  infoGalleryDetailsM_metrics.top + 'px';
+			// 	galleryDetailsM__column_1.style.justifyContent = 'flex-start';
+			// 	console.log(infoGalleryDetailsM_metrics.top)
+			// }
+
+			if(header.getBoundingClientRect().bottom <= 0 && footerPosition >= -100) {
+					//infoGalleryDetailsM.style.transform = 'translateY(0px)';
+					infoGalleryDetailsM.style.position = 'fixed';
+					infoGalleryDetailsM.style.left =  infoGalleryDetailsM_metrics.left + 'px';
+					infoGalleryDetailsM.style.top =  infoGalleryDetailsM_metrics.top + 'px'; //infoGalleryDetailsM_metrics.top
+
+					// setTimeout(function() {
+					// 	infoGalleryDetailsM.style.transform = 'translateY(' +  ((window.pageYOffset - header.getBoundingClientRect().height ) < 0 ? 0 : window.pageYOffset - header.getBoundingClientRect().height - 10) +'px)';
+					// 	infoGalleryDetailsM.style.position = 'static';
+					// 	galleryDetailsM__column_1.style.justifyContent = 'flex-start'
+					// }, 500)
+			}
+
+			if(header.getBoundingClientRect().bottom >= 0 && footerPosition >= -100) {
+				//infoGalleryDetailsM.style.transform = 'translateY(0px)';
+				infoGalleryDetailsM.style.position = 'static';
 				galleryDetailsM__column_1.style.justifyContent = 'flex-start';
 			}
 			
-			if(footer_metrics.top <= infoGalleryDetailsM_metrics.bottom && footerPosition < -100) {
-				infoGalleryDetailsM.style.transform = 'translateY(0px)';
+			if(footer_metrics.top <= infoGalleryDetailsM_metrics.bottom && footerPosition <= -100) {
+				//infoGalleryDetailsM.style.transform = 'translateY(0px)';
+				infoGalleryDetailsM.style.position = 'static';
 				galleryDetailsM__column_1.style.justifyContent = 'flex-end';
 			}
 
@@ -1162,6 +1187,13 @@ if (!isMobile.any()) {
 					item.classList.remove('focus');
 				}
 			}
+		});
+
+		window.addEventListener('resize', function(e) {
+			let width = mask.getBoundingClientRect().width;
+			let left= mask.getBoundingClientRect().left;
+			infoGalleryDetailsM.style.width = width + 'px';
+			infoGalleryDetailsM.style.left = left + 'px';
 		});
 
 		galleryDetailsM__next.addEventListener('click', function() {

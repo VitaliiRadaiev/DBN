@@ -1099,11 +1099,11 @@ const selectscrolloptions = (cursorwidth) => {
 	return opt;
 }
 
-if (!isMobile.any()) {
-	$(function() {
-   		 $("body").niceScroll(selectscrolloptions('12px'));
-	})
-}
+// if (!isMobile.any()) {
+// 	$(function() {
+//    		 $("body").niceScroll(selectscrolloptions('12px'));
+// 	})
+// }
 
 $(function() {  
     $(".form__input_textarea").niceScroll(selectscrolloptions('6px'));
@@ -1187,7 +1187,7 @@ if (!isMobile.any()) {
 					item.classList.remove('focus');
 				}
 			}
-		});
+		}, { passive: false });
 
 		window.addEventListener('resize', function(e) {
 			let width = mask.getBoundingClientRect().width;

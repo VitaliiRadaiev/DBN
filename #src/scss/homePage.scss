@@ -1,6 +1,7 @@
+
 // ==== MAIN-BANNER =====================================================
 .main-banner {
-	position: relative;
+	position: relative; 
 	height: 674px;
 	display: flex;
 	flex-direction: column;
@@ -378,6 +379,9 @@
 		}
 	}
 	&__subtitle {
+		&.text {
+			font-family: $mainFontFamily;
+		}
 		@media (max-width: $md2+px ) {
 			font-size: 14px;
 		}
@@ -473,6 +477,7 @@
 	&__text-block {
 		width: 100%;
 		max-width: 505px;
+		padding-right: 15px;
 
 		@media (max-width: $md2+px ) {
 			max-width: 700px;
@@ -490,7 +495,7 @@
 		}
 	}
 	&__dots {
-		max-width: 416px;
+		max-width: 442px;
 
 		@media (max-width: $md2+px ) {
 			max-width: none;
@@ -716,3 +721,10 @@
 }
 
 // ==== AND OUR-PROJECTS =====================================================
+
+
+.award-winning {
+	& .text {
+		font-family: $mainFontFamily;
+	}
+}

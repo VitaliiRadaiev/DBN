@@ -121,6 +121,19 @@
 		flex-direction: column;	
 		padding: 107px 15px 35px 98px;
 
+		@media (min-width: 1800px ) {
+			min-height: 914px;
+		}
+
+
+		@media (min-width: 1600px ) {
+			min-height: 864px;
+		}
+
+		@media (min-width: 1500px ) {
+			min-height: 767px;
+		}
+
 
 		@media (max-width: 1200px ) {
 			padding-left: 50px;
@@ -238,7 +251,11 @@
 		line-height: calc(30 / 20);
 		margin-bottom: 16px;
 	}
-	&__text {}
+	&__text {
+		&.text {
+			color: #202020;
+		}
+	}
 }
 
 // ==== AND WHY-USE-US =====================================================

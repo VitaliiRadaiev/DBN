@@ -30,6 +30,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Lora";
+  font-display: swap;
+  src: url("../fonts/Lora-Regular.woff") format("woff"), url("../fonts/Lora-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -588,6 +596,7 @@ p {
   font-size: 16px;
   font-weight: 300;
   line-height: calc(30 / 16);
+  font-family: "Lora", serif;
 }
 
 .bigtitle {
@@ -705,6 +714,7 @@ p {
   font-size: 14px;
   font-weight: 300;
   line-height: calc(24 / 14);
+  font-family: "Lora", serif;
 }
 
 .testimonial__author {
@@ -820,6 +830,7 @@ p {
   line-height: calc(30 / 20);
   text-align: center;
   margin-bottom: 206px;
+  font-family: "Lora", serif;
 }
 
 .diagram-process {
@@ -2926,6 +2937,12 @@ textarea.input {
   margin-bottom: 11px;
 }
 
+.item-services__subtitle.text,
+.item-services__subtitle.aboutUs-small-info__text,
+.latest-works__testimonial .item-services__subtitle.testimonial__author {
+  font-family: "GTWalsheimPro", sans-serif;
+}
+
 .item-services__btn-wrap {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -3003,6 +3020,7 @@ textarea.input {
 .our-projects__text-block {
   width: 100%;
   max-width: 505px;
+  padding-right: 15px;
 }
 
 .our-projects__title {
@@ -3012,7 +3030,7 @@ textarea.input {
 }
 
 .our-projects__dots {
-  max-width: 416px;
+  max-width: 442px;
 }
 
 .our-projects__btn-wrap {
@@ -3133,6 +3151,13 @@ textarea.input {
   -webkit-transition: all .2s ease;
   -o-transition: all .2s ease;
   transition: all .2s ease;
+}
+
+.award-winning .text,
+.award-winning .aboutUs-small-info__text,
+.award-winning .latest-works__testimonial .testimonial__author,
+.latest-works__testimonial .award-winning .testimonial__author {
+  font-family: "GTWalsheimPro", sans-serif;
 }
 
 .choose-ikea {
@@ -3990,6 +4015,12 @@ textarea.input {
   margin-bottom: 16px;
 }
 
+.cards-why-use-us__text.text,
+.cards-why-use-us__text.aboutUs-small-info__text,
+.latest-works__testimonial .cards-why-use-us__text.testimonial__author {
+  color: #202020;
+}
+
 .contact {
   min-height: 1075px;
   position: relative;
@@ -4713,7 +4744,7 @@ textarea.input {
 .info-galleryDetails-m__name {
   color: #37383a;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: calc(30 / 20);
   margin-bottom: 10px;
 }
@@ -4998,6 +5029,24 @@ textarea.input {
 
   .socila-footer__link:hover path {
     fill: #325364;
+  }
+}
+
+@media (min-width: 1500px) {
+  .aboutPage .block-info-right-text__wrap {
+    min-height: 767px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .aboutPage .block-info-right-text__wrap {
+    min-height: 864px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .aboutPage .block-info-right-text__wrap {
+    min-height: 914px;
   }
 }
 
